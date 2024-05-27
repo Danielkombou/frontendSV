@@ -33,12 +33,12 @@ function Home() {
     setOpenAddEditModal({ isShown: true, data: noteDetails, type: "edit" })
   }
 
-  const showToastMessage = () => {
-    console.log(isShown)
+  const showToastMessage = (message, type) => {
+    // console.log(response.data.message)
     setShowTostMsg({
       isShown: true,
-      message: "Noted Udated Successfully",
-      type: "Udate",
+      message,
+      type,
     })
   }
   
@@ -50,7 +50,6 @@ function Home() {
       type: "Delete"
     })
   }
-  // console.log(type)
 
   // Get User Info
   const getUserInfo = async () => {
@@ -85,7 +84,7 @@ function Home() {
     try {
       const response = await axiosInstance.delete("/delete-note/" + noteId)
 
-      if (response.data && response.data.error) {
+      if (response.data) {
         showToastMessage("Note Dleted Successfully", 'delete')
         getAllNotes();
         onClose();

@@ -20,9 +20,8 @@ function AddEditNotes({noteData, getAllNotes, type, onClose, showToastMessage}) 
         tags
       });
 
-      if(response.data && response.data.note) {
-        showToastMessage("Note Addedd Successfully");
-        
+      if(response.data) {
+        showToastMessage(response.data.message);
         getAllNotes();
         onClose();
       }
@@ -47,12 +46,11 @@ function AddEditNotes({noteData, getAllNotes, type, onClose, showToastMessage}) 
           tags
         });
   
-        if(response.data ) {
+        console.log(response.data.message)
+        if(response.data) {
           getAllNotes();
           onClose();
-          showToastMessage("Note Udated Successfully")
-          console.log(response.data.message)
-          console.log(response.data)
+          showToastMessage(response.data.message)
         }
       } catch (error) {
         if(
