@@ -50,7 +50,7 @@ function AddEditNotes({noteData, getAllNotes, type, onClose, showToastMessage}) 
         if(response.data ) {
           getAllNotes();
           onClose();
-          showToastMessage("N")
+          showToastMessage("Note Udated Successfully")
           console.log(response.data.message)
           console.log(response.data)
         }
