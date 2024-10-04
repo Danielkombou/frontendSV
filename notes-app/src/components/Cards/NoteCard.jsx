@@ -2,7 +2,7 @@ import React from 'react'
 import moment from "moment"
 import {MdOutlinePushPin, MdCreate, MdDelete} from 'react-icons/md'
 
-function NoteCard({title, date, content, tags, isPinned, onEdit, onDelete, onPinNote}) {
+function NoteCard({title, content, tags, isPinned, onEdit, onDelete, onPinNote}) {
   return (
     <div className="border rounded p-4 bg-white hover:shadow-xl transition-all ease-in-out">
         <div className="flex items-center justify-between">

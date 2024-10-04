@@ -65,7 +65,7 @@ function AddEditNotes({noteData, getAllNotes, type, onClose, showToastMessage}) 
   
   const handleAddNote = () => {
     if(!title){
-      setError("Please en the title");
+      setError("Please enter the title");
       return
     }
     if(!content){
